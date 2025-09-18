@@ -1,6 +1,6 @@
 /*
  * 001ledtoogle.c
- * Normal Pull up pull down confrigation
+ * Normal Push pull configuration
  *  Created on: Sep 18, 2025
  *      Author: Chinmay
  */
