@@ -1,6 +1,6 @@
 /*
  * 003led_button.c
- *
+ * On board button PA0
  *  Created on: Sep 21, 2025
  *      Author: Chinmay
  */
@@ -41,29 +41,17 @@ int main(void)
 
 	GPIO_PeriClockControl(GPIOA, ENABLE);
 	GPIO_Init(&GpioBtn);
-    int prevState = 0;
 
-    /*  code given by instructure not working properly
 	while(1)
 	{
 
-		        if(GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0)= BTN_PRESSED) 
-		        { 
-		            delay();
-		            GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12); // toggle LED
-		       }
-     */
-    
-    
-	while(1)
-	{
-		int currState = GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0);
+		 if(GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0) == BTN_PRESSED)
+		     {
+		         delay();
+		         GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12); // toggle LED function
+		     }
 
-		        if(currState != prevState)
-		        {
-		            GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12); // toggle LED
-		            prevState = currState;
-		       }
+
 	}
   return 0;
-}
+	}
